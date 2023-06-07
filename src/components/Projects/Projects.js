@@ -2,12 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import leaf from "../../Assets/Projects/leaf.png";
-import emotion from "../../Assets/Projects/emotion.png";
-import editor from "../../Assets/Projects/codeEditor.png";
 import chatify from "../../Assets/Projects/chatify.png";
-import suicide from "../../Assets/Projects/suicide.png";
-import bitsOfCode from "../../Assets/Projects/blog.png";
 
 function Projects() {
   return (
@@ -28,7 +23,7 @@ function Projects() {
               title="Course E-Commerce"
               description="A website for selling courses online is a platform that allows instructors or course creators to create, publish, and sell courses to learners over the internet and real-time Q&A sessions with learners."
               ghLink="https://github.com/pmhnam/courses-ecommerce-apis"
-              demoLink="https://ec-apis.hnam.id.vn"
+              demoLink="https://api.ce.hnam.id.vn"
             />
           </Col>
 
