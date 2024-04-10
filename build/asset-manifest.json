@@ -1,11 +1,12 @@
 {
   "files": {
     "main.css": "/static/css/main.fe802acb.css",
-    "main.js": "/static/js/main.06793575.js",
+    "main.js": "/static/js/main.5be49309.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
-    "static/media/Node_BE_Pham_Minh_Hoang_Nam.pdf": "/static/media/Node_BE_Pham_Minh_Hoang_Nam.27bf4b5b640197ced939.pdf",
+    "static/media/Node_BE_Pham_Minh_Hoang_Nam.pdf": "/static/media/Node_BE_Pham_Minh_Hoang_Nam.1cfcfa77db1f7cbdeb03.pdf",
     "static/media/home-main.svg": "/static/media/home-main.541f8179af8209ce03ccf2178fe62dbf.svg",
     "static/media/about.png": "/static/media/about.aee0f771fbfc1e7b8fa8.png",
+    "static/media/express-ts.jpg": "/static/media/express-ts.d3dc26ce284631c0d018.jpg",
     "static/media/chatify.png": "/static/media/chatify.7206044e0b5cdad44726.png",
     "static/media/logo.png": "/static/media/logo.54fc3a05fd0f72f1e3ba.png",
     "static/media/home-bg.jpg": "/static/media/home-bg.dc52d5d40a40b13154b0.jpg",
@@ -13,11 +14,11 @@
     "static/media/pre.svg": "/static/media/pre.d4812f51c8c80976eaab.svg",
     "index.html": "/index.html",
     "main.fe802acb.css.map": "/static/css/main.fe802acb.css.map",
-    "main.06793575.js.map": "/static/js/main.06793575.js.map",
+    "main.5be49309.js.map": "/static/js/main.5be49309.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fe802acb.css",
-    "static/js/main.06793575.js"
+    "static/js/main.5be49309.js"
   ]
 }

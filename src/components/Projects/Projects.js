@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
 import chatify from "../../Assets/Projects/chatify.png";
+import expressTs from "../../Assets/Projects/express-ts.jpg";
 
 function Projects() {
   return (
@@ -27,16 +28,16 @@ function Projects() {
             />
           </Col>
 
-          {/* <Col md={4} className="project-card">
+          <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={bitsOfCode}
+              imgPath={expressTs}
               isBlog={false}
-              title="Bits-0f-C0de"
-              description="My personal blog page build with Next.js and Tailwind Css which takes the content from makdown files and renders it using Next.js. Supports dark mode and easy to write blogs using markdown."
-              ghLink="https://github.com/soumyajit4419/Bits-0f-C0de"
-              demoLink="https://blogs.soumya-jit.tech/"
+              title="Express.js & Typescript Codebase"
+              description="An Express.js and Typescript codebase for server-side development. Tech stack: Express.js, Typescript, PostgreSQL, Redis-Stack, RabbitMQ and AWS"
+              ghLink="https://github.com/pmhnam/express-ts-base"
+              demoLink="https://github.com/pmhnam/express-ts-base"
             />
-          </Col> */}
+          </Col>
 
         </Row>
       </Container>
