@@ -17,10 +17,10 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} 'bash -lc "
             source ~/.bashrc
-            export PATH=$PATH:/home/${{ secrets.VPS_USER }}/.nvm/versions/node/v22.14.0/bin/node
+            export PATH=$PATH:/home/${{ secrets.VPS_USER }}/.nvm/versions/node/v22.14.0/bin/npm
             export PATH=$PATH:/home/${{ secrets.VPS_USER }}/.nvm/versions/node/v22.14.0/bin/pm2
             cd /home/${{ secrets.VPS_USER }}/portfolio/
             git pull origin master
-            /home/${{ secrets.VPS_USER }}/.nvm/versions/node/v22.14.0/bin/node build
+            /home/${{ secrets.VPS_USER }}/.nvm/versions/node/v22.14.0/bin/npm run build
             /home/${{ secrets.VPS_USER }}/.nvm/versions/node/v22.14.0/bin/pm2 restart portfolio
           "'
