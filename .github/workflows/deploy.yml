@@ -21,6 +21,6 @@ jobs:
             export PATH=$PATH:/home/${{ secrets.VPS_USER }}/.nvm/versions/node/v22.14.0/bin/pm2
             cd /home/${{ secrets.VPS_USER }}/portfolio/
             git pull origin master
-            /home/${{ secrets.VPS_USER }}/.nvm/versions/node/v22.14.0/bin/bun install
+            npm install
             /home/${{ secrets.VPS_USER }}/.nvm/versions/node/v22.14.0/bin/pm2 restart portfolio
           "'
