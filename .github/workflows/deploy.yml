@@ -19,10 +19,8 @@ jobs:
             source ~/.bashrc
             export PATH=$PATH:/home/${{ secrets.VPS_USER }}/.nvm/versions/node/v22.14.0/bin/bun
             export PATH=$PATH:/home/${{ secrets.VPS_USER }}/.nvm/versions/node/v22.14.0/bin/pm2
-            export PATH=$PATH:/home/${{ secrets.VPS_USER }}/.nvm/versions/node/v22.14.0/bin/node
-            export PATH=$PATH:/home/${{ secrets.VPS_USER }}/.nvm/versions/node/v22.14.0/bin/yarn
             cd /home/${{ secrets.VPS_USER }}/portfolio/
             git pull origin master
-            /home/${{ secrets.VPS_USER }}/.nvm/versions/node/v22.14.0/bin/bun install
+            /home/${{ secrets.VPS_USER }}/.nvm/versions/node/v22.14.0/bin/bun build
             /home/${{ secrets.VPS_USER }}/.nvm/versions/node/v22.14.0/bin/pm2 restart portfolio
           "'
