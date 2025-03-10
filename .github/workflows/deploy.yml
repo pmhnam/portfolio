@@ -16,10 +16,10 @@ jobs:
           echo "${{ secrets.VPS_SSH_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'EOF'
-            export PATH=$PATH:/home/${{ secrets.VPS_USER }}/.nvm/versions/node/v22.14.0/bin/bun
-            export PATH=$PATH:/home/${{ secrets.VPS_USER }}/.nvm/versions/node/v22.14.0/bin/pm2
+            source ~/.bashrc
             cd /home/ubuntu/portfolio/
             git pull origin master
             bun install
             pm2 restart portfolio
           EOF
+        shell: bash
