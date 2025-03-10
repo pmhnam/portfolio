@@ -1,34 +1,11 @@
-name: Deploy Portfolio to VPS
-
-on:
-  push:
-    branches:
-      - master
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-
-      - name: Install dependencies
-        run: bun install
-
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@v1
-        with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }} )
-          key: ${{ secrets.VPS_SSH_KEY }}
-          script: |
-            cd /home/ubuntu/portfolio/
-            git pull origin master
-            bun install
-            pm2 restart portfolio
+- name: Copy files to VPS
+  run: |
+    mkdir -p ~/.ssh
+    echo "${{ secrets.VPS_SSH_KEY }}" > ~/.ssh/id_rsa
+    chmod 600 ~/.ssh/id_rsa
+    ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'EOF'
+      cd /home/ubuntu/portfolio/
+      git pull origin master
+      bun install
+      pm2 restart portfolio
+    EOF
