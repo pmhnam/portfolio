@@ -24,7 +24,7 @@ function Projects() {
               title="Course E-Commerce"
               description="A website for selling courses online is a platform that allows instructors or course creators to create, publish, and sell courses to learners over the internet and real-time Q&A sessions with learners."
               ghLink="https://github.com/pmhnam/courses-ecommerce-apis"
-              demoLink="https://api.ce.hnam.id.vn"
+              demoLink="https://apice.hnam.id.vn"
             />
           </Col>
 
