@@ -1,4 +1,4 @@
-name: Deploy Portfolio to VPS
+name: Deploy React Portfolio to VPS
 
 on:
   push:
@@ -10,17 +10,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Deploy to VPS
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Copy project to VPS
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.VPS_SSH_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} 'bash -lc "
-            source ~/.bashrc
-            export PATH=$PATH:/home/${{ secrets.VPS_USER }}/.nvm/versions/node/v22.14.0/bin/npm
-            export PATH=$PATH:/home/${{ secrets.VPS_USER }}/.nvm/versions/node/v22.14.0/bin/pm2
+          rsync -avz --exclude='node_modules' --exclude='.git' -e "ssh -o StrictHostKeyChecking=no" ./ ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/home/${{ secrets.VPS_USER }}/portfolio/
+
+      - name: Deploy on VPS using Docker Compose
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'EOF'
             cd /home/${{ secrets.VPS_USER }}/portfolio/
-            git pull origin master
-            /home/${{ secrets.VPS_USER }}/.nvm/versions/node/v22.14.0/bin/npm run build
-            /home/${{ secrets.VPS_USER }}/.nvm/versions/node/v22.14.0/bin/pm2 restart portfolio
-          "'
+            docker-compose down
+            docker-compose up -d --build
+          EOF
